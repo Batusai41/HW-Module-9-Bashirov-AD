@@ -52,7 +52,7 @@ const personGenerator = {
         }
     }`,
 
-    patroNameMaleJson: `{
+    PatroNameMaleJson: `{
         "count": 10,
         "list": {     
             "id_1": "Петрович",
@@ -68,7 +68,7 @@ const personGenerator = {
         }
     }`,
 
-    patroNameFemaleJson: `{
+    PatroNameFemaleJson: `{
         "count": 10,
         "list": {     
             "id_1": "Васильевна",
@@ -116,8 +116,6 @@ const personGenerator = {
         }
     }`,
 
-
-
     GENDER_MALE: 'Мужчина',
     GENDER_FEMALE: 'Женщина',
 
@@ -143,16 +141,16 @@ const personGenerator = {
         }
     },
 
-     randomSurname: function() {
+     randomSurName: function() {
         return this.randomValue(this.surnameJson);
     },
 
     randomPatroName: function() {
         if (this.person.gender === 'Мужчина') {
-            return this.randomValue(this.patrNameMaleJson);
+            return this.randomValue(this.PatroNameMaleJson);
         }
         else {
-            return this.randomValue(this.patrNameFemaleJson);
+            return this.randomValue(this.PatroNameFemaleJson);
         }
     },
 
@@ -190,7 +188,7 @@ const personGenerator = {
         if (this.person.gender === 'Женщина') {
             this.person.surName = this.person.surName + 'а';
         }
-        this.person.patroName = this.randomPatroName();
+        this.person.PatroName = this.randomPatroName();
         this.person.occupation = this.randomOccupation();
         this.person.DayOfBirth = this.randomDayOfBirth();
         return this.person;
