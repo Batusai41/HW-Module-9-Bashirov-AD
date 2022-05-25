@@ -19,7 +19,7 @@ span {
 .btn {
     height: 50px;
     width: 120px;
-    border: rgb(0, 1, 1) solid;
+    border: rgb(0, 1, 1) double ;
     border-radius: 5%;
     margin: 10px;
     background-color: rgb(244, 235, 141);
