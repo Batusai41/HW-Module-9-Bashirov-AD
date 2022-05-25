@@ -1,4 +1,3 @@
-
 window.onload = addPerson();
 
 const create = document.getElementById('create');

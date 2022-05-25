@@ -123,61 +123,61 @@ const personGenerator = {
 
     randomValue: function (json) {
         const obj = JSON.parse(json);
-        const prop = `id_${this.randomIntNumber(obj.count, 1)}`;  // this = personGenerator
+        const prop = `id_${this.randomIntNumber(obj.count, 1)}`;
         return obj.list[prop];
     },
 
-    randomGender: function() {
+    randomGender: function () {
         let gender = this.randomIntNumber();
-        return gender ? this.GENDER_MALE : this.GENDER_FEMALE;   
+        return gender ? this.GENDER_MALE : this.GENDER_FEMALE;
     },
 
-    randomFirstName: function() {
+    randomFirstName: function () {
         if (this.person.gender === 'Мужчина') {
             return this.randomValue(this.firstNameMaleJson);
-        }
-        else {
+        } else {
             return this.randomValue(this.firstNameFemaleJson);
         }
     },
 
-     randomSurName: function() {
+    randomSurName: function () {
         return this.randomValue(this.surnameJson);
     },
 
-    randomPatroName: function() {
+    randomPatroName: function () {
         if (this.person.gender === 'Мужчина') {
             return this.randomValue(this.PatroNameMaleJson);
-        }
-        else {
+        } else {
             return this.randomValue(this.PatroNameFemaleJson);
         }
     },
 
-    randomOccupation: function() {
+    randomOccupation: function () {
         if (this.person.gender === 'Мужчина') {
             return this.randomValue(this.occupationMaleJson);
-        }
-        else {
+        } else {
             return this.randomValue(this.occupationFemaleJson);
         }
     },
 
-    randomDayOfBirth: function() {
+    randomDayOfBirth: function () {
         const arrayMonth = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
         let month = this.randomIntNumber(11, 0);
         month = arrayMonth[month];
         let day;
         switch (month) {
-            case 2: day = this.randomIntNumber(28, 1);
-            break;
-            case 4 || 6 || 9 || 11: day = this.randomIntNumber(30, 1);
-            break;
-            default: day = this.randomIntNumber(31, 1);
-            break;
+            case 2:
+                day = this.randomIntNumber(28, 1);
+                break;
+            case 4 || 6 || 9 || 11:
+                day = this.randomIntNumber(30, 1);
+                break;
+            default:
+                day = this.randomIntNumber(31, 1);
+                break;
         }
         let year = this.randomIntNumber(1989, 2001);
-        return day + ' ' + month + ' ' + year + ' года';    
+        return day + ' ' + month + ' ' + year + ' года';
     },
 
     getPerson: function () {
